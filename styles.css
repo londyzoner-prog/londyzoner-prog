@@ -125,6 +125,12 @@ h1 {
   background: rgba(8, 34, 40, 0.45);
 }
 
+.btn-sol {
+  color: #082019;
+  background: linear-gradient(135deg, #7dffcf, #62f2be);
+  border-color: rgba(98, 242, 190, 0.65);
+}
+
 .visualizer-wrap {
   margin: 1.3rem auto 1.8rem;
   border: 1px solid var(--line);
@@ -151,6 +157,7 @@ h1 {
 }
 
 .mission,
+.donate,
 .featured {
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -169,6 +176,38 @@ h2 {
 .mission p {
   margin: 0 0 0.75rem;
   color: #d4efdf;
+}
+
+.donate p {
+  margin: 0 0 0.75rem;
+  color: #d4efdf;
+}
+
+.wallet-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.wallet-row code {
+  display: inline-block;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  background: rgba(0, 0, 0, 0.28);
+  color: #d8fff0;
+  overflow-wrap: anywhere;
+}
+
+.donate-actions {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 0.55rem;
+}
+
+.donate-note {
+  color: #b7d7c6;
 }
 
 .pillars {

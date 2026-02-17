@@ -67,3 +67,31 @@ function draw() {
 }
 
 draw();
+
+const donateSection = document.getElementById("donate");
+const walletText = document.getElementById("sol-wallet-text");
+const donateLink = document.getElementById("sol-donate-link");
+const copyWalletBtn = document.getElementById("copy-sol-wallet");
+
+if (donateSection && walletText && donateLink && copyWalletBtn) {
+  const solAddress = donateSection.dataset.solAddress || "";
+  const paymentUri = `solana:${solAddress}?label=${encodeURIComponent("LondyZone Donation")}`;
+
+  walletText.textContent = solAddress;
+  donateLink.setAttribute("href", paymentUri);
+
+  copyWalletBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(solAddress);
+      copyWalletBtn.textContent = "Copied";
+      setTimeout(() => {
+        copyWalletBtn.textContent = "Copy Wallet";
+      }, 1400);
+    } catch {
+      copyWalletBtn.textContent = "Copy failed";
+      setTimeout(() => {
+        copyWalletBtn.textContent = "Copy Wallet";
+      }, 1400);
+    }
+  });
+}
